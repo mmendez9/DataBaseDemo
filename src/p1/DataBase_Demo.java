@@ -38,14 +38,14 @@ public class DataBase_Demo {
 
         // Get information from the database
         try (Statement s = connection.createStatement()){
-            ResultSet rs = s.executeQuery("SELECT * FROM address");
+            ResultSet rs = s.executeQuery("SELECT * FROM ContactList");
 
             // Display the record set
             while (rs.next()) {
-                System.out.println(rs.getString(2) + " lives in apartment " + rs.getString(3));
+                System.out.println("First Name: " + rs.getString(2) + " \tLast Name: " + rs.getString(3));
             }
         } catch (SQLException e) {
-            //e.printStackTrace();
+            e.printStackTrace();
             System.out.println("SQL Error");
         }
     }
